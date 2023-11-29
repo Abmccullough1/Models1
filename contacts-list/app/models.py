@@ -9,7 +9,7 @@ class Contacts(models.Model):
     phone = models.TextField()
     is_favorite = models.BooleanField()
     
-def create(name, email, phone, favorite) -> Contact:
+def create(name, email, phone, favorite) -> Contacts:
     contact = Contacts(name=name, email=email, phone=phone, is_favorite=favorite)
     contact.save()
     return contact
@@ -19,10 +19,9 @@ def favorite() -> Contacts:
 def all() -> Contacts:
     contacts = Contacts.objects.all()
     return contacts
-def update_email(name, email_new) -> Contacts:
+def update_email(name, newemail) -> Contacts:
     contact = Contacts.objects.get(name=name)
-    contact.email = email_new
-    contact.save()
+    contact.email = newemail
     return contact
 def find_by_name(name) -> Optional[Contacts]:
     try:
@@ -34,3 +33,4 @@ def delete(name):
     contact = Contacts.objects.get(name=name)
     contact.delete()
     return contact
+
