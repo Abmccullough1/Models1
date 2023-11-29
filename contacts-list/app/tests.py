@@ -5,9 +5,9 @@ from app import models
 class TestContact(TestCase):
     def test_can_create_contact(self):
         contact = models.create_contact(
-            "Janet",
-            "janet@example.com",
-            "1234567890",
+            "megamind",
+            "megamind@villans,com",
+            "191288",
             True,
         )
 
@@ -19,21 +19,21 @@ class TestContact(TestCase):
     def test_can_view_all_contacts_at_once(self):
         contacts_data = [
             {
-                "name": "Elias",
-                "email": "elias.laurila@example.com",
+                "name": "Batman",
+                "email": "Batman@robincantfight.com",
                 "phone": "07-854-839",
                 "is_favorite": True,
             },
             {
-                "name": "Martin",
-                "email": "martin.dasilva@example.com",
-                "phone": "01-42-13-81-18",
+                "name": "Megamind",
+                "email": "MegaMind@villans.com",
+                "phone": "018",
                 "is_favorite": False,
             },
             {
-                "name": "Alma",
-                "email": "alma.johansen@example.com",
-                "phone": "15165801",
+                "name": "Ben",
+                "email": "Beniswierd@google.com",
+                "phone": "9292821",
                 "is_favorite": True,
             },
         ]
@@ -62,21 +62,21 @@ class TestContact(TestCase):
     def test_can_search_by_name(self):
         contacts_data = [
             {
-                "name": "Elias",
-                "email": "elias.laurila@example.com",
+                "name": "Batman",
+                "email": "Batman@robincantfight.com",
                 "phone": "07-854-839",
                 "is_favorite": True,
             },
             {
-                "name": "Martin",
-                "email": "martin.dasilva@example.com",
-                "phone": "01-42-13-81-18",
+                "name": "Megamind",
+                "email": "MegaMind@villans.com",
+                "phone": "018",
                 "is_favorite": False,
             },
             {
-                "name": "Alma",
-                "email": "alma.johansen@example.com",
-                "phone": "15165801",
+                "name": "Ben",
+                "email": "Beniswierd@google.com",
+                "phone": "9292821",
                 "is_favorite": True,
             },
         ]
@@ -99,21 +99,21 @@ class TestContact(TestCase):
     def test_can_view_favorites(self):
         contacts_data = [
             {
-                "name": "Elias",
-                "email": "elias.laurila@example.com",
+                "name": "Batman",
+                "email": "Batman@robincantfight.com",
                 "phone": "07-854-839",
                 "is_favorite": True,
             },
             {
-                "name": "Martin",
-                "email": "martin.dasilva@example.com",
-                "phone": "01-42-13-81-18",
+                "name": "Megamind",
+                "email": "MegaMind@villans.com",
+                "phone": "018",
                 "is_favorite": False,
             },
             {
-                "name": "Alma",
-                "email": "alma.johansen@example.com",
-                "phone": "15165801",
+                "name": "Ben",
+                "email": "Beniswierd@google.com",
+                "phone": "9292821",
                 "is_favorite": True,
             },
         ]
@@ -131,21 +131,21 @@ class TestContact(TestCase):
     def test_can_update_contacts_email(self):
         contacts_data = [
             {
-                "name": "Elias",
-                "email": "elias.laurila@example.com",
+                "name": "Batman",
+                "email": "Batman@robincantfight.com",
                 "phone": "07-854-839",
                 "is_favorite": True,
             },
             {
-                "name": "Martin",
-                "email": "martin.dasilva@example.com",
-                "phone": "01-42-13-81-18",
+                "name": "Megamind",
+                "email": "MegaMind@villans.com",
+                "phone": "018",
                 "is_favorite": False,
             },
             {
-                "name": "Alma",
-                "email": "alma.johansen@example.com",
-                "phone": "15165801",
+                "name": "Ben",
+                "email": "Beniswierd@google.com",
+                "phone": "9292821",
                 "is_favorite": True,
             },
         ]
@@ -167,25 +167,24 @@ class TestContact(TestCase):
     def test_can_delete_contact(self):
         contacts_data = [
             {
-                "name": "Elias",
-                "email": "elias.laurila@example.com",
+                "name": "Batman",
+                "email": "Batman@robincantfight.com",
                 "phone": "07-854-839",
                 "is_favorite": True,
             },
             {
-                "name": "Martin",
-                "email": "martin.dasilva@example.com",
-                "phone": "01-42-13-81-18",
+                "name": "Megamind",
+                "email": "MegaMind@villans.com",
+                "phone": "018",
                 "is_favorite": False,
             },
             {
-                "name": "Alma",
-                "email": "alma.johansen@example.com",
-                "phone": "15165801",
+                "name": "Ben",
+                "email": "Beniswierd@google.com",
+                "phone": "9292821",
                 "is_favorite": True,
             },
         ]
-
         for contact_data in contacts_data:
             models.create_contact(
                 contact_data["name"],
