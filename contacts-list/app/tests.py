@@ -12,8 +12,8 @@ class TestContact(TestCase):
         )
 
         self.assertEqual(contact.id, 1)
-        self.assertEqual(contact.name, "Janet")
-        self.assertEqual(contact.email, "janet@example.com")
+        self.assertEqual(contact.name, "megamind")
+        self.assertEqual(contact.email, "megamind@villans,com")
         self.assertTrue(contact.is_favorite)
 
     def test_can_view_all_contacts_at_once(self):
@@ -89,12 +89,12 @@ class TestContact(TestCase):
                 contact_data["is_favorite"],
             )
 
-        self.assertIsNone(models.find_contact_by_name("aousnth"))
+        self.assertIsNone(models.find_contact_by_name("gyubyiov"))
 
-        contact = models.find_contact_by_name("Alma")
+        contact = models.find_contact_by_name("Batman")
 
         self.assertIsNotNone(contact)
-        self.assertEqual(contact.email, "alma.johansen@example.com")
+        self.assertEqual(contact.email, "Batman@robincantfight.com")
 
     def test_can_view_favorites(self):
         contacts_data = [
@@ -158,10 +158,10 @@ class TestContact(TestCase):
                 contact_data["is_favorite"],
             )
 
-        models.update_contact_email("Elias", "big.e@example.com")
+        models.update_email("Ben", "Beniswierd@gmail.com")
 
         self.assertEqual(
-            models.find_contact_by_name("Elias").email, "big.e@example.com"
+            models.find_contact_by_name("Ben").email, "Beniswierd@gmail.com"
         )
 
     def test_can_delete_contact(self):
@@ -193,6 +193,6 @@ class TestContact(TestCase):
                 contact_data["is_favorite"],
             )
 
-        models.delete_contact("Martin")
+        models.delete_contact("Batman")
 
         self.assertEqual(len(models.all_contacts()), 2)
